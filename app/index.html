@@ -21,15 +21,22 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-      </ul>
-      <p>installed.</p>
-      <h3>Enjoy coding! - Yeoman</h3>
-    </div>
+    <table ng-show="venues">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Menu</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="venue in venues">
+          <td>{{venue.name}}</td>
+          <td>{{venue.location.address}}</td>
+          <td ng-show="{{venue.menu}}"><a href="{{venue.menu.url}}">Menu</a></td>
+        </tr>
+      </tbody>
+    </table>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
