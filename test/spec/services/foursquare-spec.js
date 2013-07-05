@@ -18,10 +18,10 @@ describe('foursquare service', function() {
   });
 
   it('calls the right URL', function() {
-    http.expectGET('https://api.foursquare.com/v2/venues/explore?ll=40,-90&section=food').respond({
+    http.expectGET('https://api.foursquare.com/v2/venues/search?ll=40,-90&radius=800&intent=checkin&categoryId=4bf58dd8d48988d1c4941735').respond({
       meta: { code: 200 },
       response: {
-        groups: [
+        venues: [
           {}, {}
         ]
       }
@@ -31,6 +31,6 @@ describe('foursquare service', function() {
       results = response;
     });
     http.flush();
-    expect(results.groups.length).toEqual(2);
+    expect(results.venues.length).toEqual(2);
   });
 });
