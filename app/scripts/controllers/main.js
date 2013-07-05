@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('foodCompassApp')
+angular.module('foodCompass')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
